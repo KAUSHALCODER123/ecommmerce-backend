@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                // Modern JS target
+    "module": "commonjs",              // For Node.js
+    "rootDir": "./src",                // Source files
+    "outDir": "./dist",                // Compiled output
+    "moduleResolution": "node",
+    "resolveJsonModule": true,         // Import JSON
+    "esModuleInterop": true,           // Default import compatibility
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                    // Enable strict mode
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "typeRoots": ["./node_modules/@types", "./src/interfaces"],
+    "baseUrl": "./",
+    "paths": {
+      "@config/*": ["src/config/*"],
+      "@modules/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"],
+      "@middleware/*": ["src/middleware/*"],
+      "@wrappers/*": ["src/wrappers/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

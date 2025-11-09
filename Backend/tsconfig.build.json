@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmitOnError": true,   // Prevent deployment if build fails
+    "removeComments": true,  // Clean build
+    "sourceMap": false       // Optional, can disable for production
+  },
+  "exclude": ["tests", "**/*.spec.ts", "**/*.test.ts"]
+}

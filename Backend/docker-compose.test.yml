@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      - NODE_ENV=test
+      - MONGODB_URI=mongodb://mongo-test:27017/ecommerce_test
+      - REDIS_URL=redis://redis-test:6379
+    depends_on:
+      - mongo-test
+      - redis-test
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run test
+
+  mongo-test:
+    image: mongo:7
+    environment:
+      - MONGO_INITDB_DATABASE=ecommerce_test
+    ports:
+      - "27018:27017"
+
+  redis-test:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"

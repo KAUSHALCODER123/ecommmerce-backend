@@ -1,0 +1,14 @@
+[run]
+source = src
+omit = 
+    src/tests/*
+    src/**/*.test.ts
+    src/**/*.spec.ts
+    src/index.ts
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError

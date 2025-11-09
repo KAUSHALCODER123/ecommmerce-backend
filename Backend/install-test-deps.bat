@@ -1,0 +1,6 @@
+@echo off
+echo Installing testing dependencies...
+npm install --save-dev jest @types/jest ts-jest supertest @types/supertest mongodb-memory-server husky lint-staged
+echo Installing additional dev dependencies...
+npm install --save-dev @types/morgan
+echo Done!
